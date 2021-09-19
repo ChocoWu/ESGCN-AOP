@@ -41,3 +41,6 @@ We use embedding bert-cased by [bert-base-cased](https://huggingface.co/bert-bas
 ```
   python aop.py test --config configs/16res_test.conf
 ```
+
+## Notes
+This code refers to [SpERT](https://github.com/lavis-nlp/spert), Thanks a lot.
