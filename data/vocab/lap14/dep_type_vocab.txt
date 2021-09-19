@@ -1,0 +1,46 @@
+special_token_size	2
+token_size	40
+singleton_size	2
+singleton_max_count	1
+0	*PAD*	1
+1	*UNK*	1
+2	punct	2951
+3	nsubj	2714
+4	det	2480
+5	advmod	2151
+6	case	1865
+7	ROOT	1500
+8	amod	1432
+9	obj	1334
+10	conj	1139
+11	cc	1102
+12	obl	1064
+13	compound	1014
+14	cop	1000
+15	dep	941
+16	mark	890
+17	aux	723
+18	nmod	593
+19	xcomp	436
+20	advcl	401
+21	nmod:poss	329
+22	ccomp	302
+23	parataxis	236
+24	compound:prt	166
+25	nummod	160
+26	acl:relcl	158
+27	aux:pass	156
+28	nsubj:pass	125
+29	acl	100
+30	fixed	88
+31	obl:npmod	68
+32	csubj	53
+33	appos	46
+34	obl:tmod	45
+35	det:predet	42
+36	iobj	36
+37	discourse	31
+38	expl	28
+39	cc:preconj	5
+40	csubj:pass	1
+41	orphan	1
