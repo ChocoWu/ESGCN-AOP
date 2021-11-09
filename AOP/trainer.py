@@ -260,8 +260,8 @@ class SynFueTrainer(BaseTrainer):
         if self.args.store_predictions and not self.args.no_overlapping:
             evaluator.store_predictions()
 
-        if self.args.store_examples:
-            evaluator.store_examples()
+        # if self.args.store_examples:
+        #     evaluator.store_examples()
         return rel_nec_eval
 
     def _get_optimizer_params(self, model):
