@@ -64,8 +64,8 @@ class nESGCN(nn.Module):
         dep_embed = self.dep_embedding(graph)
 
         attn_list = []
-        for lagcn in self.model:
-            r, x, attn = lagcn(x, simple_graph, dep_embed)
+        for esgcn in self.model:
+            r, x, attn = esgcn(x, simple_graph, dep_embed)
             attn_list.append(attn)
 
         if output_attention is True:
@@ -79,9 +79,9 @@ class SpanEncoder(nn.Module):
         super(SpanEncoder, self).__init__()
         self.opt = opt
         self.bert = bert
-        self.lagcn = nESGCN(opt)
+        self.esgcn = nESGCN(opt)
 
-        self.fc = nn.Linear(opt.bert_dim*2 + opt.pos_dim, opt.bert_dim*2)
+        self.fc = nn.Linear(opt.bert_dim*2, opt.bert_dim*2)
         self.bert_dropout = nn.Dropout(opt.bert_dropout)
         self.output_dropout = nn.Dropout(opt.output_dropout)
 
@@ -91,9 +91,9 @@ class SpanEncoder(nn.Module):
         sequence_output = self.bert(input_ids)[0]
         x = self.bert_dropout(sequence_output)
 
-        lagcn_output = self.lagcn(x, simple_graph, graph, output_attention)
+        esgcn_output = self.esgcn(x, simple_graph, graph, output_attention)
 
-        output = torch.cat((lagcn_output[0], sequence_output), dim=-1)
+        output = torch.cat((esgcn_output[0], sequence_output), dim=-1)
         output = self.fc(output)
         output = self.output_dropout(output)
-        return output, lagcn_output[1]
+        return output, esgcn_output[1]
