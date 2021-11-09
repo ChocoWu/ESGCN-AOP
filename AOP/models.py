@@ -57,9 +57,9 @@ class SynFueBERT(BertPreTrainedModel):
         self.SpanEnc = Encoder.SpanEncoder(self.bert, opt=args)
 
         # layers
-        self.rel_classifier = nn.Linear(config.hidden_size * 4 + size_embedding * 2, relation_types)
-        self.rel_classifier3 = nn.Linear(config.hidden_size * 4 + size_embedding * 3, relation_types)
-        self.term_classifier = nn.Linear(config.hidden_size * 6 + size_embedding, term_types)
+        self.rel_classifier = nn.Linear(config.hidden_size * 6 + size_embedding * 2, relation_types)
+        self.rel_classifier3 = nn.Linear(config.hidden_size * 6 + size_embedding * 3, relation_types)
+        self.term_classifier = nn.Linear(config.hidden_size * 8 + size_embedding, term_types)
         self.dep_linear = nn.Linear(config.hidden_size, relation_types)
         self.size_embeddings = nn.Embedding(100, size_embedding)
         self.dropout = nn.Dropout(prop_drop)
