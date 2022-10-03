@@ -1,5 +1,5 @@
 # High-Order Pair-Wise Aspect and Opinion Terms Extraction With Edge-Enhanced Syntactic Graph Convolution
-This repository implements the dependency parser described in the paper [High-Order Pair-Wise Aspect and Opinion Terms Extraction With Edge-Enhanced Syntactic Graph Convolution](https://ieeexplore.ieee.org/document/9478183)
+This repository implements the method described in the paper [High-Order Pair-Wise Aspect and Opinion Terms Extraction With Edge-Enhanced Syntactic Graph Convolution](https://ieeexplore.ieee.org/document/9478183)
 ## Prerequisite
 * [pytorch Library](https://pytorch.org/)
 * [transformers](https://huggingface.co/transformers/model_doc/bert.html)
